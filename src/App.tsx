@@ -7,7 +7,7 @@ import Draggable, {DraggableData} from 'react-draggable';
 
 function App() {
 
-    const [item, setItem] = useState<any>('')
+    const [todo, setTodo] = useState<any>('')
     // @ts-ignore
     const [items, setItems] = useState<any>(JSON.parse(localStorage.getItem('items')) || [])
     let [error, setError] = useState<string | null>(null)
@@ -17,10 +17,10 @@ function App() {
     }, [items])
 
     const newItem = () => {
-        if (item.trim() !== '') {
+        if (todo.trim() !== '') {
             const newItem = {
                 id: v4(),
-                item,
+                item: todo,
                 color: randomColor({
                     luminosity: 'light',
                 }),
@@ -30,11 +30,11 @@ function App() {
                 }
             }
             setItems((item: any) => [...items, newItem])
-            setItem('')
+            setTodo('')
         } else {
             setError('Title is required')
 
-            setItem('')
+            setTodo('')
         }
     }
 
@@ -54,14 +54,14 @@ function App() {
         }
     }
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setItem(e.target.value)
+        setTodo(e.target.value)
     }
 
 
     return (
         <div className="App">
             <div className='wrapper'>
-                <input className={ error ? 'error' : 'input'}  onKeyDown={onKeyPressHandler} value={item} onChange={onChangeHandler}
+                <input className={ error ? 'error' : 'input'} onKeyDown={onKeyPressHandler} value={todo} onChange={onChangeHandler}
                        type="text" placeholder={error ? 'Title is required' : 'Enter something...'}/>
                 <button className='enter' onClick={newItem}> Enter</button>
             </div>
