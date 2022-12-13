@@ -33,6 +33,7 @@ function App() {
             setItem('')
         } else {
             setError('Title is required')
+
             setItem('')
         }
     }
