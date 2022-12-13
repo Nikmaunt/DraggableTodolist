@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/DraggableTodolist/static/css/main.cf482252.css",
+    "main.js": "/DraggableTodolist/static/js/main.8c117bd6.js",
+    "index.html": "/DraggableTodolist/index.html",
+    "main.cf482252.css.map": "/DraggableTodolist/static/css/main.cf482252.css.map",
+    "main.8c117bd6.js.map": "/DraggableTodolist/static/js/main.8c117bd6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cf482252.css",
+    "static/js/main.8c117bd6.js"
+  ]
+}
